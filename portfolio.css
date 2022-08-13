@@ -8,6 +8,13 @@ body.body-main
 {
     padding: 5px 50px 5px 50px;
     background-color: #e6f2ff;
+    width: 750px;
+
+}
+
+body.container
+{
+    background-color: #e6f2ff;
 }
 
 .body-main .outer
@@ -15,7 +22,6 @@ body.body-main
     width: 100%;
     position: center;
 }
-
 
 p.p-about
 {
