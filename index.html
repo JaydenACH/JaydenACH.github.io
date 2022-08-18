@@ -8,6 +8,18 @@
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
           crossorigin="anonymous">
     <link href="portfolio.css" rel="stylesheet">
+    <script>
+        function showlinkedin()
+        {
+            var text = document.getElementById("linkedin").value;
+            text.style.display = "block";
+        }
+        function showemail()
+        {
+            var text = document.getElementById("email").value;
+            text.style.display = "block";
+        }
+    </script>
 </head>
 <body class="container">
     <div class="outer">
@@ -68,7 +80,7 @@
                     the application that I'd like to showcase.
                 </li>
                 <li>
-                    Please do not expect too much of a HTML / CSS / Javascript here. I solely use this
+                    Please do not expect too much of HTML / CSS / Javascript here. I solely use this
                     as my logging page and share my journey of coding here.
                 </li>
             </ul>
@@ -98,9 +110,10 @@
             <p>
                 You can find me at:
             </p>
-            <button type="button" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                                                                      height="25" fill="currentColor"
-                                                                      class="bi bi-linkedin" viewBox="0 0 16 16">
+            <button type="button" class="btn btn-primary btn-lg" onclick="showlinkedin()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                    height="25" fill="currentColor"
+                    class="bi bi-linkedin" viewBox="0 0 16 16">
             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175
             1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0
             1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327
@@ -108,15 +121,24 @@
             1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1
             .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
             LinkedIn</button>
-            <button type="button" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="25"
-                                                                      height="25" fill="currentColor"
-                                                                      class="bi bi-envelope-paper" viewBox="0 0 16 16">
+            <button type="button" class="btn btn-primary btn-lg" onclick="showemail()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                height="25" fill="currentColor"
+                class="bi bi-envelope-paper" viewBox="0 0 16 16">
             <path d="M4 0a2 2 0 0 0-2 2v1.133l-.941.502A2 2 0 0 0 0 5.4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.4a2
             2 0 0 0-1.059-1.765L14 3.133V2a2 2 0 0 0-2-2H4Zm10 4.267.47.25A1 1 0 0 1 15 5.4v.817l-1 .6v-2.55Zm-1
             3.15-3.75 2.25L8 8.917l-1.25.75L3 7.417V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5.417Zm-11-.6-1-.6V5.4a1 1 0 0 1
             .53-.882L2 4.267v2.55Zm13 .566v5.734l-4.778-2.867L15 7.383Zm-.035 6.88A1 1 0 0 1 14 15H2a1 1 0 0 1-.965-.738L8
             10.083l6.965 4.18ZM1 13.116V7.383l4.778 2.867L1 13.117Z"></path></svg>
             Email</button>
+        </div>
+        <div>
+            <p id="linkedin" style="display: none">
+                linkedin.com/angchunhang
+            </p>
+            <p id="email" style="display: none">
+                angchunhang@gmail.com
+            </p>
         </div>
     </div>
 </body>
