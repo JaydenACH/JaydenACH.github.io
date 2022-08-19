@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+          crossorigin="anonymous">
+    <link href="portfolio.css" rel="stylesheet"></head>
+<body class="container">
+    <h1>
+        BOM Creation Application
+    </h1>
+    <hr>
+    <h3>
+        Link for the code can be found here:
+        <a href="https://github.com/JaydenACH/MyPortfolio/tree/main/BOM_Creation">
+            BOM creation Folder</a>
+    </h3>
+    <div style="text-align: justify">
+        <p>
+            I NEED to explain the title of this application. It probably does not make sense to most of
+            the people who has never does BOM before. Bill of material is a list of items which required
+            to build a product with multiple components of categories. For the engineering team to convey
+            their required items to production line, they need to provide this list of items with quantity
+            and other related information.
+        </p>
+        <p>
+            The initial method of doing BOM for this problem was by setting up an Excel file, type in the
+            category, item code and quantity in respective column. Other information such as the drawing
+            number of each item, revision of that particular drawing, material, thickness of sheet metal
+            and the color coat of that item, these will be retrieved from a file called the master part
+            list. Users do VLOOKUP formula in Excel to look up the item code from master part list and
+            got all other information into BOM list file.
+        </p>
+        <p>
+            One can only imagine how many possible things can go wrong in a file like this. VLOOKUP formula
+            may refering the wrong cell, link to the master part list broken due to no access to the file,
+            inserting new line will mess up the formatting of the cell, and more. The process is tidious
+            and very manual. So I wrote this application to reduce the user's effort down to 3 input only.
+            Except the file name that will be saved; more on that later.
+        </p>
+        <p>
+            So to start, a name is needed from the user to save the unfinished work. Then user will key
+            in the item code, category of the said item and the quantity. The application will take care
+            of the rest. When they are done, click export to save and open an Excel file. If the work is
+            done halfway, click save and come back later. Down in the window below, has a table format
+            of the preview of the file. On the side, there is an up and down button to move a line or
+            multiple line up or down.
+        </p>
+        <p>
+            Now for the logic of the code behind all of those, firstly the master part list will be read
+            into a csv to simplify the file without format. There are 2 files during development, one in
+            company server, another one in local storage for offline access. So the code will check for
+            access server's copy else the local file will be used. During deployment, it will be removed
+            from the code. The file will be imported into a SQL file for the application to access later.
+            But the SQL is only created in memory. It will be wiped away once the application is done with
+            it. To insert data into the table, user must type in the category, item code and quantity into
+            the textbox, else it will prompt an error message. (While user is keying in the item code,
+            there will be a preview of live result below the item code box. This is not pushed into GitHub
+            page yet as of 19th Aug 2022, due to more updates and bugs are being fixed.)
+        </p>
+        <p>
+            After inserted into the table, user may delete rows, move one or multiple lines up or down,
+            and the quantity of the items will be sumed up on the top. In the case of user tries to insert
+            an item which is not found in the master part list, a Refresh Button will be activated (it was
+            deactivated until this situation happened.) User may proceed to register the new item inside
+            the master part list Excel file and click refresh button in the application. Then the item can
+            be inserted into the table. After any insertion of items are done, the textbox of quantity will
+            be cleared to prevent double-clicking the insert button.
+        </p>
+        <p>
+            Among the items, not all of them has a drawing. So before clicking insert, user may choose if
+            that item has drawing or not. Then after the table is completed, user may load a file comprises
+            of the drawing's revision, to be inserted into the table. This is required due to constant
+            changing of the revision file, so it only should be loaded once the table is completed.
+        </p>
+        <p>
+            There is a menu bar up top which holds the load revision button and also the save and load
+            button. While working halfway, the file can be saved as an Excel file with the name provided
+            in the beginning of the application. The same file can be used to load into the application
+            when user wants to resume the work.
+        </p>
+        <p>
+            Potential improvement in this application will be something like prompting user to save file
+            before exiting, collecting the quantity of items of each BOM list into a database for further
+            data visualization, collecting the quantity of each sheet metal thickness to know which kind
+            of thickness is being used the most, save or write files only from server folders in order to
+            let multi-users access and write the tables, and widgets that will adjust themselves as the
+            window is being resized.
+        </p>
+        <p>
+            If you want to know any further about this application or any suggestions, please do contact
+            me from the main page.
+        </p>
+    </div>
+</body>
+</html>
