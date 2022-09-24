@@ -29,7 +29,27 @@
             BOM creation. If you aren't familiar with the BOM creation, maybe you may look at the BOM creation
             project that I did as a desktop application. (Click <a href="bom_creation.html">Here</a>)
         </p>
-        
+        <p>
+            First function that I made was the master part list page, to let users to search parts from more than 25,000
+            rows of records. Since I took over the Excel file, I need another page to create part, mass create part and 
+            update part. In the search page, the data was passed from Flask file as AJAX source to be inserted into the DataTable.
+            It helped with search box, filter function and pagination. For the creation and update of part, user must logged in, so
+            that the record shows who did any changes into the master list. So a login decorator is wrapped around those page in Flask App.
+            During creating single item or mass create, username will be inserted depending on the login user. Date will be recorded too.
+        </p>
+        <p>
+            In the BOM creation app, users supposed to refer the master part list excel file to generate a BOM list. But since the excel file
+            has been replaced by this webapp, the function to create BOM also need to transfer to this app. As of 25th Sept 2022, the BOM creation
+            is not fully completed yet.
+        </p>
+        <p>
+            Besides that, I also imported the PDF merger app into this webapp, so that users do not need to install
+            anything in their desktop or having any system restrictions. 
+        </p>
+        <p>
+            This webapp is currently hosting in one of the spared laptop in the office on local network. So all users on the same network
+            will be able to use this app. I am using the waitress to serve the website.
+        </p>
     </div>
 </body>
 </html>
