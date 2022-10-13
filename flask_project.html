@@ -31,16 +31,25 @@
         </p>
         <p>
             First function that I made was the master part list page, to let users to search parts from more than 25,000
-            rows of records. Since I took over the Excel file, I need another page to create part, mass create part and 
+            rows of records. Since I took over the Excel file, I need more web-pages to create part, mass create part and
             update part. In the search page, the data was passed from Flask file as AJAX source to be inserted into the DataTable.
             It helped with search box, filter function and pagination. For the creation and update of part, user must logged in, so
             that the record shows who did any changes into the master list. So a login decorator is wrapped around those page in Flask App.
             During creating single item or mass create, username will be inserted depending on the login user. Date will be recorded too.
+            Single item creation will be a form page where user types in all required information and submit to master part list.
+            Multiple item creation lets user download a template of excel file with header, and fill in more than 1 part to be uploaded.
+            Backend will process this Excel file to read each line to write the data into master part list.
         </p>
         <p>
-            In the BOM creation app, users supposed to refer the master part list excel file to generate a BOM list. But since the excel file
+            For the BOM creation app, users supposed to refer the master part list excel file to generate a BOM list. But since the excel file
             has been replaced by this webapp, the function to create BOM also need to transfer to this app. As of 25th Sept 2022, the BOM creation
             is not fully completed yet.
+        </p>
+        <p>
+            BOM creation took a sharp turn in terms of creating, edit & download it (dated 13th Oct 2022). The creation of BOM became uploading
+            an Excel file to server folder. Viewing the BOM will be by reading the Excel file and display line by line with extra information
+            inserted from master part list (like a VLOOKUP). Excel files will be stored in server folder to act as history tracking or versioning
+            for future reference.
         </p>
         <p>
             Besides that, I also imported the PDF merger app into this webapp, so that users do not need to install
