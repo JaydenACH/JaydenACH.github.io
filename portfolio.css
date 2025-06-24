@@ -30,7 +30,7 @@ body {
   background: rgba(255, 255, 255, 0.75);
   border-radius: 28px;
   box-shadow: 0 6px 32px rgba(0, 180, 216, 0.12), 0 1.5px 6px rgba(0,0,0,0.04);
-  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  padding: 3.5rem 2.5rem 3rem 2.5rem;
   max-width: 350px;
   width: 100%;
   text-align: center;
@@ -121,7 +121,7 @@ h2 {
 
 @media (max-width: 480px) {
   .card.light-theme {
-    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    padding: 3.5rem 2.5rem 3rem 2.5rem;
     max-width: 98vw;
   }
   .company-logo {
